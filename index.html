@@ -78,12 +78,12 @@
         <p>Здесь вы можете заказать самую вкусную пиццу из тех, что вы когда-либо пробовали </p>
         <button id="buy">Купить</button>
     </div>
-    <form id = "form" onsubmit="return false;">
+    <form id = "form">
         <input type = 'text' placeholder="Имя" id="user_name">
         <input type = 'text' placeholder="Email" id="user_email">
         <input type = 'text' placeholder="Телефон" id="user_phone">
         <div id="error"></div>
-        <button id="order">Подтвредить</button>
+        <button type="button" id="order">Подтвредить</button>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -98,7 +98,7 @@
             document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name
         })    
         order.addEventListener("click", () => {
-            event.preventDefault(); 
+            
             document.getElementById("error").innerText = ' ';
             let name = document.getElementById("user_name").value;
             let email = document.getElementById("user_email").value;
